@@ -1,0 +1,50 @@
+
+CREATE DATABASE IF NOT EXISTS [FaturamentoFornecedores];
+
+USE [FaturamentoFornecedores]
+GO
+
+
+CREATE TABLE [dbo].[Fornecedores](
+	[FornecedorID] [int] IDENTITY(1,1) NOT NULL,
+	[Nome] [nvarchar](100) NOT NULL,
+	[Endereco] [nvarchar](200) NOT NULL,
+	[Bairro] [nvarchar](100) NOT NULL,
+	[Cidade] [nvarchar](100) NOT NULL,
+	[CEP] [nvarchar](20) NOT NULL,
+	[Telefone] [nvarchar](20) NOT NULL,
+	[Email] [nvarchar](100) NULL,
+	[CPF] [nvarchar](14) NOT NULL,
+	[RG] [nvarchar](20) NOT NULL,
+	[Modalidade] [nvarchar](20) NOT NULL
+	);
+
+
+
+CREATE TABLE [dbo].[HistoricoArrendamentos](
+	[HistoricoID] [int] IDENTITY(1,1) NOT NULL,
+	[FornecedorID] [int] NOT NULL,
+	[Alqueires] [decimal](10, 2) NOT NULL,
+	[ToneladasPorAlqueire] [decimal](10, 2) NOT NULL,
+	[ValorAno] [decimal](10, 2) NOT NULL,
+	[ValorPorMes] [decimal](10, 2) NOT NULL,
+	[ATRMes] [decimal](10, 2) NOT NULL,
+	[TotalReceber] [decimal](10, 2) NOT NULL
+	);
+
+CREATE TABLE [dbo].[HistoricoEntregas](
+	[HistoricoID] [int] IDENTITY(1,1) NOT NULL,
+	[FornecedorID] [int] NOT NULL,
+	[Mes] [int] NOT NULL,
+	[Ano] [int] NOT NULL,
+	[Toneladas] [decimal](10, 2) NOT NULL,
+	[ATR] [decimal](10, 2) NOT NULL,
+	[ValorTotal] [decimal](10, 2) NOT NULL,
+	[ValorReceberDesconto] [decimal](10, 2) NOT NULL
+	);
+
+
+
+
+
+
