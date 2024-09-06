@@ -99,12 +99,9 @@ namespace FaturamentoFornecedores
         {
             CarregarFornecedores();
 
-            cboFornecedor.Text = string.Empty;
+            cboFornecedor.Text = null;
             txtPesquisa.Text = string.Empty;
-
-            CarregarFornecedores();
-
-            cboFornecedor.Text = string.Empty;
+            cboFornecedor.Text = null;
             txtPesquisa.Text = string.Empty;
         }
     }
